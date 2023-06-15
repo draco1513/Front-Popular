@@ -29,7 +29,7 @@
     </div>
 
     <!-- ----------------------------------------- -->
-    <div>
+    <!-- <div>
       <div class="">
         <mat-form-field class="full-width">
           <input
@@ -71,7 +71,7 @@
           Password is required
         </small>
       </div>
-    </div>
+    </div> -->
     <DIV>
       <mat-form-field class="full-width" appearance="outline">
         <mat-label>Email</mat-label>
@@ -94,62 +94,36 @@
           placeholder="********"
         />
       </mat-form-field>
-      <div class="nav-item-sep ">
-        <button mat-icon-button [matMenuTriggerFor]="menu">
-          TODOS
-          <mat-icon>arrow_drop_down</mat-icon>
-        </button>
-        <mat-menu #menu="matMenu">
-          <button mat-menu-item value="1">FONDO CAPITAL EMPRENDEDOR</button>
-          <button mat-menu-item value="2">FONDO POPULAR</button>
-          <button mat-menu-item>FONDO MYPE</button>
-          <button mat-menu-item>FONDO PEREZ HIDALGO</button>
-        </mat-menu>
-        <input
-          matInput
-          formControlName="email"
-          type="email"
-          name="email"
-          placeholder="Email"
-          class="lg-12"
-        />
+      a
+      <div class="nav-item-sep">
+        <mat-select placeholder=" TODOS">
+          <mat-option [value]="1">FONDO CAPITAL EMPRENDEDOR</mat-option>
+          <mat-option [value]="2">FONDO POPULAR</mat-option>
+          <mat-option [value]="3">FONDO MYPE</mat-option>
+          <mat-option [value]="4">FONDO PEREZ HIDALGO</mat-option>
+        </mat-select>
+        <br />
       </div>
     </DIV>
 
-    <!-- ----------------------------------------- -->
-
-    <mat-menu #menu="matMenu">
-      <li>FONDO CAPITAL EMPRENDEDOR</li>
-      <li>FONDO POPULAR</li>
-      <li>FONDO MYPE</li>
-      <li>FONDO PEREZ HIDALGO</li>
-    </mat-menu>
-
-    <!-- ----------------------------------------- -->
-
-    <!-- <div class="text-center">
-      <a
-        [routerLink]="'/sessions/signup2'"
-        class="mat-color-primary text-center full-width"
-        >Sign up</a
-      >-->
+    <br /><br />
     <mat-checkbox
       name="rememberMe"
       [formControl]="signinForm.controls['rememberMe']"
       class="pb-16"
-      >Remember this computer</mat-checkbox
+      >Recuerdame en este dispositivo</mat-checkbox
     >
 
     <button mat-raised-button color="primary">Signin</button>
     <mat-divider class="my-32"></mat-divider>
 
-    <div class="mb-24" fxLayout="column" fxLayoutGap="16px">
+    <!-- <div class="mb-24" fxLayout="column" fxLayoutGap="16px">
       <button mat-raised-button color="warn" type="button">
         Signin with Auth0
       </button>
       <button mat-raised-button color="warn" type="button">
         Firebase Signin
       </button>
-    </div>
+    </div> -->
   </form>
 </div>

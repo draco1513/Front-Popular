@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy, AfterViewInit } from '@angular/core';
 import { UntypedFormGroup, UntypedFormBuilder, UntypedFormControl, Validators } from '@angular/forms';
 import { MatButton } from '@angular/material/button';
 import { MatProgressBar } from '@angular/material/progress-bar';
@@ -38,7 +38,7 @@ export class Signin2Component implements OnInit, AfterViewInit, OnDestroy {
       username: new UntypedFormControl('Watson', Validators.required),
       password: new UntypedFormControl('12345678', Validators.required),
       rememberMe: new UntypedFormControl(true)
-      }
+    }
     );
   }
 
@@ -64,26 +64,28 @@ export class Signin2Component implements OnInit, AfterViewInit, OnDestroy {
     this.progressBar.mode = 'indeterminate';
 
     this.jwtAuth.signin(signinData.username, signinData.password)
-    .subscribe(response => {
-      this.router.navigateByUrl(this.jwtAuth.return);
-    }, err => {
-      this.submitButton.disabled = false;
-      this.progressBar.mode = 'determinate';
-      this.errorMsg = err.message;
-      // console.log(err);
-    })
+      .subscribe(response => {
+        this.router.navigateByUrl(this.jwtAuth.return);
+      }, err => {
+        this.submitButton.disabled = false;
+        this.progressBar.mode = 'determinate';
+        this.errorMsg = err.message;
+        // console.log(err);
+      })
   }
 
   autoSignIn() {
-    if(this.jwtAuth.return === '/') {
+    if (this.jwtAuth.return === '/') {
       return
     }
-    this.egretLoader.open(`Automatically Signing you in! \n Return url: ${this.jwtAuth.return.substring(0, 20)}...`, {width: '320px'});
+    this.egretLoader.open(`Automatically Signing you in! \n Return url: ${this.jwtAuth.return.substring(0, 20)}...`, { width: '320px' });
     setTimeout(() => {
       this.signin();
       console.log('autoSignIn');
       this.egretLoader.close()
     }, 2000);
   }
+
+
 
 }
