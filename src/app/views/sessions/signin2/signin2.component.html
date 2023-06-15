@@ -1,11 +1,11 @@
 <div class="seciton-left">
-  <div class="section-left-content">
+  <!-- <div class="section-left-content">
     <h1 class="text-36 font-weight-light">Registro</h1>
     <p class="mb-24 text-small">-Si desea registrarse-</p>
     <button mat-flat-button color="accent" [routerLink]="'/sessions/signup2'">
       Registrarse
     </button>
-  </div>
+  </div> -->
 </div>
 
 <div
@@ -94,7 +94,7 @@
           placeholder="********"
         />
       </mat-form-field>
-      a
+
       <div class="nav-item-sep">
         <mat-select placeholder=" TODOS">
           <mat-option [value]="1">FONDO CAPITAL EMPRENDEDOR</mat-option>
@@ -110,11 +110,12 @@
     <mat-checkbox
       name="rememberMe"
       [formControl]="signinForm.controls['rememberMe']"
-      class="pb-16"
       >Recuerdame en este dispositivo</mat-checkbox
     >
 
-    <button mat-raised-button color="primary">Signin</button>
+    <button mat-raised-button color="primary" routerLink="/others/blank">
+      Ingresar
+    </button>
     <mat-divider class="my-32"></mat-divider>
 
     <!-- <div class="mb-24" fxLayout="column" fxLayoutGap="16px">
