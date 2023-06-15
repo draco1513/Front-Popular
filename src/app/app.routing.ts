@@ -5,10 +5,16 @@ import { AuthGuard } from './shared/guards/auth.guard';
 
 export const rootRouterConfig: Routes = [
   {
-    path: '',
-    redirectTo: 'others/blank',
+    path:'',
+    redirectTo:'sessions/signin2',
     pathMatch: 'full'
+
   },
+  // {
+  //   path: '',
+  //   redirectTo: 'others/blank',
+  //   pathMatch: 'full'
+  // },
   {
     path: '',
     component: AuthLayoutComponent,

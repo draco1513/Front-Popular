@@ -1,7 +1,13 @@
 <div fxLayout="row wrap">
   <div fxLayout="column" fxFlex="100" fxFlex.gt-md="50">
+
+
+
+
+
+
     <!-- Time line -->
-    <mat-card class="default">
+    <!-- <mat-card class="default">
       <h3 class="mx-16 my-24">Timeline</h3>
       <mat-card-content>
         <div class="timeline">
@@ -86,18 +92,18 @@
           </div>
         </div>
       </mat-card-content>
-    </mat-card>
+    </mat-card> -->
     <!-- End Time line -->
 
-    <mat-card class="default">
+    <!-- <mat-card class="default">
       <h3 class="mx-16 my-24">Uploaded Photos</h3>
       <mat-card-content class="p-0">
           <mat-grid-list cols="3" rowHeight="1:1" class="app-gallery">
-              <!-- Gallery item -->
-              <mat-grid-tile *ngFor="let photo of photos">
-                <img [src]="photo.url" alt="">
+               <!--Gallery item -->
+              <!-- <mat-grid-tile *ngFor="let photo of photos">
+                <img [src]="photo.url" alt=""> -->
                 <!-- item detail, show on hover -->
-                <div class="gallery-control-wrap">
+                 <!-- -<div class="gallery-control-wrap">
                   <div class="gallery-control">
                     <h4 class="photo-detail fz-1" [fxHide.lt-sm]="true">{{photo.name}}</h4>
                     <span fxFlex></span>
@@ -114,11 +120,13 @@
               </mat-grid-tile>
             </mat-grid-list>
       </mat-card-content>
-    </mat-card>
+    </mat-card> -->
   </div>
-  
+
   <div fxLayout="column" fxFlex="100" fxFlex.gt-md="50">
-    <mat-card class="default">
+    <!-- tickets -->
+    <!-- <mat-card class="default">
+
       <h3 class="mx-16 my-24">Support Tickets</h3>
       <mat-card-content class="p-0">
         <mat-list class="compact-list mb-16">
@@ -138,9 +146,9 @@
           <button mat-button class="full-width">View all</button>
         </div>
       </mat-card-content>
-    </mat-card>
+    </mat-card> -->
 
-    <mat-card class="default">
+    <!-- <mat-card class="default">
       <h3 class="mx-16 my-24">Assigned Tasks</h3>
       <mat-card-content class="p-0">
         <div class="list-tasktype">
@@ -172,7 +180,7 @@
           <button mat-button class="full-width">View all</button>
         </div>
       </mat-card-content>
-    </mat-card>
+    </mat-card> -->
 
   </div>
 </div>
