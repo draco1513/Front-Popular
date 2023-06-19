@@ -5,8 +5,8 @@ import { AuthGuard } from './shared/guards/auth.guard';
 
 export const rootRouterConfig: Routes = [
   {
-    path:'',
-    redirectTo:'sessions/signin2',
+    path: '',
+    redirectTo: 'sessions/signin',
     pathMatch: 'full'
 
   },
@@ -22,7 +22,7 @@ export const rootRouterConfig: Routes = [
       {
         path: 'sessions',
         loadChildren: () => import('./views/sessions/sessions.module').then(m => m.SessionsModule),
-        data: { title: 'Session'}
+        data: { title: 'Session' }
       }
     ]
   },
@@ -34,12 +34,12 @@ export const rootRouterConfig: Routes = [
       {
         path: 'profile',
         loadChildren: () => import('./views/profile/profile.module').then(m => m.ProfileModule),
-        data: { title: 'Profile', breadcrumb: 'PROFILE'}
+        data: { title: 'Profile', breadcrumb: 'PROFILE' }
       },
       {
         path: 'others',
         loadChildren: () => import('./views/others/others.module').then(m => m.OthersModule),
-        data: { title: 'Others', breadcrumb: 'OTHERS'}
+        data: { title: 'Others', breadcrumb: 'OTHERS' }
       },
       {
         path: 'search',

@@ -1,5 +1,5 @@
 {
-  "svg.preview.background": "custom",
+  "svg.preview.background": "editor",
   "notebook.formatOnSave.enabled": true,
   "workbench.colorCustomizations": {
     "activityBar.activeBackground": "#1a1a1a",
