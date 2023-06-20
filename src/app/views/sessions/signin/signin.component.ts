@@ -29,7 +29,6 @@ export class SigninComponent implements OnInit, AfterViewInit, OnDestroy {
 
   signinForm: UntypedFormGroup;
   errorMsg = '';
-  // return: string;
 
   private _unsubscribeAll: Subject<any>;
 

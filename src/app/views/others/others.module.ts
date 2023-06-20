@@ -53,10 +53,10 @@ import { Nested3Component } from './nested3/nested3.component';
     RouterModule.forChild(OthersRoutes)
   ],
   declarations: [
-    AppGalleryComponent, 
-    AppPricingComponent, 
-    AppUsersComponent, 
-    AppBlankComponent, Nested1Component, Nested2Component, Nested3Component
+    AppGalleryComponent,
+    AppPricingComponent,
+    AppUsersComponent,
+    AppBlankComponent, Nested1Component, Nested2Component, Nested3Component,
   ]
 })
 export class OthersModule { }

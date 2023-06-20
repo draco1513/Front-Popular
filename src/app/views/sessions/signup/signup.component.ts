@@ -11,20 +11,33 @@ import { Component, OnInit } from "@angular/core";
 export class SignupComponent implements OnInit {
   signupForm: UntypedFormGroup;
 
-  constructor(private fb: UntypedFormBuilder) {}
+<<<<<<< HEAD
+  constructor(private fb: UntypedFormBuilder) { }
+=======
+  constructor(private fb: UntypedFormBuilder) { }
+>>>>>>> prueba-casa
 
-  ngOnInit() {
+  ngOnInit(): void {
 
     const password = new UntypedFormControl('', Validators.required);
 
     this.signupForm = this.fb.group(
       {
-        firstName: ["",Validators.required],
-        lastName: ["",Validators.required],
-        username: ["",Validators.required],
-        email: ["",[Validators.required,Validators.email]],
+<<<<<<< HEAD
+        firstName: ["", Validators.required],
+        lastName: ["", Validators.required],
+        username: ["", Validators.required],
+        email: ["", [Validators.required, Validators.email]],
         password: password,
-        agreed: [false,Validators.required]
+        agreed: [false, Validators.required]
+=======
+        firstName: ["", Validators.required],
+        lastName: ["", Validators.required],
+        username: ["", Validators.required],
+        email: ["", [Validators.required, Validators.email]],
+        password: password,
+        agreed: [false, Validators.required]
+>>>>>>> prueba-casa
       }
     );
   }

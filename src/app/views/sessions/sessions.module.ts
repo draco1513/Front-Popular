@@ -16,11 +16,14 @@ import { SignupComponent } from './signup/signup.component';
 import { SessionsRoutes } from "./sessions.routing";
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ErrorComponent } from './error/error.component';
+<<<<<<< HEAD
 
+=======
+>>>>>>> prueba-casa
 
 @NgModule({
   imports: [
-  CommonModule,
+    CommonModule,
     FormsModule,
     TranslateModule,
     ReactiveFormsModule,
