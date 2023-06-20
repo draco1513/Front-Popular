@@ -1,42 +1,38 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatLegacyButton as MatButton } from '@angular/material/legacy-button';
-import { MatLegacyProgressBar as MatProgressBar } from '@angular/material/legacy-progress-bar';
-import { Validators, UntypedFormGroup, UntypedFormControl } from '@angular/forms';
+import { ErrorStateMatcher } from '@angular/material/core';
+import { Validators, UntypedFormGroup, NgForm, FormGroupDirective, UntypedFormControl, AbstractControl, ValidationErrors } from "@angular/forms";
+import { UntypedFormBuilder } from "@angular/forms";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.component.html',
-  styleUrls: ['./signup.component.css']
+  selector: "app-signup",
+  templateUrl: "./signup.component.html",
+  styleUrls: ["./signup.component.scss"]
 })
 export class SignupComponent implements OnInit {
-  @ViewChild(MatProgressBar) progressBar: MatProgressBar;
-  @ViewChild(MatButton) submitButton: MatButton;
+  signupForm: UntypedFormGroup;
 
-  signupForm: UntypedFormGroup
-  constructor() {}
+  constructor(private fb: UntypedFormBuilder) { }
 
   ngOnInit() {
+
     const password = new UntypedFormControl('', Validators.required);
 
-    this.signupForm = new UntypedFormGroup({
-      email: new UntypedFormControl('', [Validators.required, Validators.email]),
-      password: password,
-      agreed: new UntypedFormControl('', (control: UntypedFormControl) => {
-        const agreed = control.value;
-        if(!agreed) {
-          return { agreed: true }
-        }
-        return null;
-      })
-    })
+    this.signupForm = this.fb.group(
+      {
+        firstName: ["", Validators.required],
+        lastName: ["", Validators.required],
+        username: ["", Validators.required],
+        email: ["", [Validators.required, Validators.email]],
+        password: password,
+        agreed: [false, Validators.required]
+      }
+    );
   }
 
-  signup() {
-    const signupData = this.signupForm.value;
-    console.log(signupData);
-
-    this.submitButton.disabled = true;
-    this.progressBar.mode = 'indeterminate';
+  onSubmit() {
+    if (!this.signupForm.invalid) {
+      // do what you wnat with your data
+      console.log(this.signupForm.value);
+    }
   }
-
 }
