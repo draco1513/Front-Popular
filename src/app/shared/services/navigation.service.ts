@@ -29,7 +29,7 @@ interface IBadge {
 @Injectable()
 export class NavigationService {
 
-// este es donde van los itemns del menu
+  // este es donde van los itemns del menu
   plainMenu: IMenuItem[] = [
     {
       name: 'DASHBOARD',
@@ -37,7 +37,14 @@ export class NavigationService {
       tooltip: 'Dashboard',
       icon: 'dashboard',
       state: 'others/blank'
-    }
+    },
+    {
+      name: 'Reporte',
+      type: 'link',
+      tooltip: 'Dashboard',
+      icon: 'task',
+      state: 'reporte/riesgo'
+    },
     // },
     // {
     //   name: 'DOC',
@@ -64,15 +71,15 @@ export class NavigationService {
   // different user type.
   publishNavigationChange(menuType: string) {
     this.menuItems.next(this.plainMenu);
-  //   switch (menuType) {
-  //     case 'separator-menu':
-  //       this.menuItems.next(this.separatorMenu);
-  //       break;
-  //     case 'icon-menu':
-  //       this.menuItems.next(this.iconMenu);
-  //       break;
-  //     default:
-  //       this.menuItems.next(this.plainMenu);
-  //   }
+    //   switch (menuType) {
+    //     case 'separator-menu':
+    //       this.menuItems.next(this.separatorMenu);
+    //       break;
+    //     case 'icon-menu':
+    //       this.menuItems.next(this.iconMenu);
+    //       break;
+    //     default:
+    //       this.menuItems.next(this.plainMenu);
+    //   }
   }
 }
