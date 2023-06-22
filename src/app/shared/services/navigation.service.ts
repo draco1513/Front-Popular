@@ -41,7 +41,7 @@ export class NavigationService {
     {
       name: 'Reporte',
       type: 'link',
-      tooltip: 'Dashboard',
+      tooltip: 'dropDow',
       icon: 'task',
       state: 'reporte/riesgo'
     },

@@ -1,25 +1,25 @@
-<DIV>
+<!-- <DIV>
   <div class="mat-elevation-z8">
     <table mat-table [dataSource]="dataSource">
-      <!-- Position Column -->
+      Position Column
       <ng-container matColumnDef="position">
         <th mat-header-cell *matHeaderCellDef>No.</th>
         <td mat-cell *matCellDef="let element">{{ element.position }}</td>
       </ng-container>
 
-      <!-- Name Column -->
+      <!-- Name Column
       <ng-container matColumnDef="name">
         <th mat-header-cell *matHeaderCellDef>Name</th>
         <td mat-cell *matCellDef="let element">{{ element.name }}</td>
       </ng-container>
 
-      <!-- Weight Column -->
+      <!-- Weight Column
       <ng-container matColumnDef="weight">
         <th mat-header-cell *matHeaderCellDef>Weight</th>
         <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
       </ng-container>
 
-      <!-- Symbol Column -->
+      <!-- Symbol Column
       <ng-container matColumnDef="symbol">
         <th mat-header-cell *matHeaderCellDef>Symbol</th>
         <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
@@ -29,9 +29,9 @@
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
 
-    <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator> -->
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
   </div>
-</DIV>
+</DIV> -->
 
 <br />
 <h3>Tabla Reporte de Riesgo</h3>
@@ -39,7 +39,7 @@
 <hr />
 <br />
 
-<!-- <div class="ml-8 mr-8 mt-8 pb-16">
+<div class="ml-8 mr-8 mt-8 pb-16">
   <div
     class="mat-elevation-z8"
     [@animate]="{ value: '*', params: { y: '50px', delay: '300ms' } }"
@@ -256,8 +256,9 @@
         </mat-header-cell>
         <mat-cell *matCellDef="let row" data-label="V_PROPIEDAD">
           {{ row.V_PROPIEDAD }}
-        </mat-cell> </ng-container
-      ><ng-container matColumnDef="V_COMERCIAL">
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="V_COMERCIAL">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
           V_COMERCIAL
         </mat-header-cell>
@@ -323,14 +324,17 @@
         </mat-cell>
       </ng-container> -->
 
-<!-- <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
-    </mat-table> -->
-<!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"> </mat-paginator> -->
-<!-- </div>
-</div> -->
-<div>
-  <br /><br />
-  <button (click)="exportToExcel()">Export to Excel</button>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br />
+    </mat-table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"> </mat-paginator> -->
+    <!-- </div>
+</div>
+      <div>
+        <br /><br />
+        <button (click)="exportToExcel()">Export to Excel</button>
+        <br /><br /><br /><br /><br /><br /><br /><br /><br />
+      </div> -->
+    <!-- </mat-table> -->
+  </div>
 </div>

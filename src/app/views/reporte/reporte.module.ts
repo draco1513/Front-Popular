@@ -7,11 +7,13 @@ import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DataSource } from '@angular/cdk/collections';
 import { MatStep } from '@angular/material/stepper';
+import { Riesgo2Component } from './riesgo2/riesgo2.component';
 
 
 @NgModule({
   declarations: [
     RiesgoComponent,
+    Riesgo2Component,
 
   ],
   imports: [
