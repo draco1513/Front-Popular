@@ -3,19 +3,23 @@ import { CommonModule } from '@angular/common';
 
 import { ReporteRoutingModule } from './reporte-routing.module';
 import { RiesgoComponent } from './riesgo/riesgo.component';
-import { MatTableModule } from '@angular/material/table';
+import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { DataSource } from '@angular/cdk/collections';
+import { MatStep } from '@angular/material/stepper';
 
 
 @NgModule({
   declarations: [
-    RiesgoComponent
+    RiesgoComponent,
+
   ],
   imports: [
     CommonModule,
     ReporteRoutingModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+
   ]
 })
 export class ReporteModule { }

@@ -5,23 +5,10 @@ import { AuthGuard } from './shared/guards/auth.guard';
 
 export const rootRouterConfig: Routes = [
   {
-
     path: '',
-    redirectTo: 'sessions/signin2',
-  }, {
-    path: '',
-    redirectTo: 'sessions/signin',
-  }, {
-    path: '',
-    redirectTo: 'sessions/signin',
+    redirectTo: 'others/blank',
+    pathMatch: 'full'
   },
-
-
-  // {
-  //   path: '',
-  //   redirectTo: 'others/blank',
-  //   pathMatch: 'full'
-  // },
   {
     path: '',
     component: AuthLayoutComponent,
@@ -43,26 +30,21 @@ export const rootRouterConfig: Routes = [
         loadChildren: () => import('./views/profile/profile.module').then(m => m.ProfileModule),
         data: { title: 'Profile', breadcrumb: 'PROFILE' }
       },
-      // {
-      //   path: 'dashboard',
-      //   loadChildren: () => ('./views/dashboard/dashboard').then(m => m.DashboardViewModule),
-      //    data: {     title: 'dashboard', breadcrumb: 'DASHBOARD'  }
-      // },
       {
         path: 'others',
         loadChildren: () => import('./views/others/others.module').then(m => m.OthersModule),
         data: { title: 'Others', breadcrumb: 'OTHERS' }
       },
-      {
-        path: 'search',
-        loadChildren: () => import('./views/search-view/search-view.module').then(m => m.SearchViewModule)
-      },
+
       {
         path: 'reporte',
         loadChildren: () => import('./views/reporte/reporte.module').then(m => m.ReporteModule),
         data: { title: 'Reporte', breadcrumb: 'Reporte' }
       },
-
+      {
+        path: 'search',
+        loadChildren: () => import('./views/search-view/search-view.module').then(m => m.SearchViewModule)
+      },
     ]
   },
   {
@@ -70,4 +52,3 @@ export const rootRouterConfig: Routes = [
     redirectTo: 'sessions/404'
   }
 ];
-

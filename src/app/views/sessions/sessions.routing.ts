@@ -18,7 +18,6 @@ export const SessionsRoutes: Routes = [
         component: SignupComponent,
         data: { title: "Signup" }
       },
-
       {
         path: "signin",
         component: SigninComponent,

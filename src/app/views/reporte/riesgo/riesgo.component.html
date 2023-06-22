@@ -1,80 +1,336 @@
-<p>riesgo works!</p>
+<DIV>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource">
+      <!-- Position Column -->
+      <ng-container matColumnDef="position">
+        <th mat-header-cell *matHeaderCellDef>No.</th>
+        <td mat-cell *matCellDef="let element">{{ element.position }}</td>
+      </ng-container>
 
-<div class="ml-8 mr-8 mt-8 pb-16">
+      <!-- Name Column -->
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef>Name</th>
+        <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+      </ng-container>
+
+      <!-- Weight Column -->
+      <ng-container matColumnDef="weight">
+        <th mat-header-cell *matHeaderCellDef>Weight</th>
+        <td mat-cell *matCellDef="let element">{{ element.weight }}</td>
+      </ng-container>
+
+      <!-- Symbol Column -->
+      <ng-container matColumnDef="symbol">
+        <th mat-header-cell *matHeaderCellDef>Symbol</th>
+        <td mat-cell *matCellDef="let element">{{ element.symbol }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <!-- <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator> -->
+  </div>
+</DIV>
+
+<br />
+<h3>Tabla Reporte de Riesgo</h3>
+<br /><br />
+<hr />
+<br />
+
+<!-- <div class="ml-8 mr-8 mt-8 pb-16">
   <div
     class="mat-elevation-z8"
     [@animate]="{ value: '*', params: { y: '50px', delay: '300ms' } }"
   >
     <mat-table [dataSource]="dataSource" matSort>
       <ng-container matColumnDef="id">
-        <mat-header-cell *matHeaderCellDef mat-sort-header>
-          ID
-        </mat-header-cell>
+        <mat-header-cell *matHeaderCellDef mat-sort-header> N </mat-header-cell>
         <mat-cell *matCellDef="let row" data-label="id">
           {{ row.id }}
         </mat-cell>
       </ng-container>
-
-      <ng-container matColumnDef="age">
+      <ng-container matColumnDef="CODIGOTCHN">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Progress
+          CODIGOTCHN
         </mat-header-cell>
-        <mat-cell *matCellDef="let row" data-label="progress">
-          {{ row.age }}
+        <mat-cell *matCellDef="let row" data-label="CODIGOTCHN">
+          {{ row.CODIGOTCHN }}
         </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="name">
+      <ng-container matColumnDef="CMONEDA">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Name
+          CMONEDA
         </mat-header-cell>
-        <mat-cell *matCellDef="let row" data-label="name">
-          {{ row.name }}
+        <mat-cell *matCellDef="let row" data-label="CMONEDA">
+          {{ row.CMONEDA }}
         </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="gender">
+      <ng-container matColumnDef="NDOCUMENTO">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Gender
+          NDOCUMENTO
         </mat-header-cell>
-        <mat-cell
-          *matCellDef="let row"
-          [style.color]="row.color"
-          data-label="color"
-        >
-          {{ row.gender }}
+        <mat-cell *matCellDef="let row" data-label="NDOCUMENTO">
+          {{ row.NDOCUMENTO }}
         </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="company">
+      <ng-container matColumnDef="tapaterno">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Company
+          AP.PATERNO
         </mat-header-cell>
-        <mat-cell
-          *matCellDef="let row"
-          [style.color]="row.color"
-          data-label="color"
-        >
-          {{ row.company }}
+        <mat-cell *matCellDef="let row" data-label="tapaterno">
+          {{ row.tapaterno }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="tamaterno">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          tamaterno
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="tamaterno">
+          {{ row.tamaterno }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="tnombres">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          NOMBRES
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="tnombres">
+          {{ row.tnombres }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="EDAD">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          EDAD
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="EDAD">
+          {{ row.EDAD }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="DNACIMIENTO">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          DNACIMIENTO
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="DNACIMIENTO">
+          {{ row.DNACIMIENTO }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="tdireccion">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          DIRECCION
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="tdireccion">
+          {{ row.tdireccion }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="CUBIGEO">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          CUBIGEO
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="CUBIGEO">
+          {{ row.CUBIGEO }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="DEPARTAMENTO">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          DEPARTAMENTO
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="DEPARTAMENTO">
+          {{ row.DEPARTAMENTO }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="PROVINCIA">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          PROVINCIA
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="PROVINCIA">
+          {{ row.PROVINCIA }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="DISTRITO">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          DISTRITO
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="DISTRITO">
+          {{ row.DISTRITO }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="cinmueble">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          cinmueble
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="cinmueble">
+          {{ row.cinmueble }}
         </mat-cell>
       </ng-container>
 
-      <ng-container matColumnDef="email">
+      <ng-container matColumnDef="actividad">
         <mat-header-cell *matHeaderCellDef mat-sort-header>
-          Company
+          ACTIVIDAD ECONOMICA
         </mat-header-cell>
-        <mat-cell
-          *matCellDef="let row"
-          [style.color]="row.color"
-          data-label="color"
-        >
-          {{ row.email }}
+        <mat-cell *matCellDef="let row" data-label="actividad">
+          {{ row.actividad }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="saldo_actual">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          SALDO ACTUAL
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="saldo_actual">
+          {{ row.saldo_actual }}
         </mat-cell>
       </ng-container>
 
-      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <ng-container matColumnDef="ESTADO">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          ESTADO
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="ESTADO">
+          {{ row.ESTADO }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="cuota">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          CUOTAS
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="cuota">
+          {{ row.cuota }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="sueldo">
+        <mat-header-cell *matHeaderCellDef mat-sort-header
+          >sueldo
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="sueldo">
+          {{ row.sueldo }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="fdesembolso">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          CUOTAS ATRASDAS
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="fdesembolso">
+          {{ row.fdesembolso }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="tipooperacion">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          CUOTA
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="tipooperacion">
+          {{ row.tipooperacion }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="S_INFOCORP">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          SUELDO
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="S_INFOCORP">
+          {{ row.S_INFOCORP }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="NVALORIZACION">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          N VALORIZACION
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="NVALORIZACION">
+          {{ row.NVALORIZACION }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="V_EDIFICACION">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          V_EDIFICACION
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="V_EDIFICACION">
+          {{ row.V_EDIFICACION }}
+        </mat-cell>
+      </ng-container>
+
+      <ng-container matColumnDef="V_PROPIEDAD">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          V_PROPIEDAD
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="V_PROPIEDAD">
+          {{ row.V_PROPIEDAD }}
+        </mat-cell> </ng-container
+      ><ng-container matColumnDef="V_COMERCIAL">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          V_COMERCIAL
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="V_COMERCIAL">
+          {{ row.V_COMERCIAL }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="V_REALIZACIONSOL">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          V_REALIZACIONSOL
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="V_REALIZACIONSOL">
+          {{ row.V_REALIZACIONSOL }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="V_REALIZACIONDOL">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          V_REALIZACIONDOL
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="V_REALIZACIONDOL">
+          {{ row.V_REALIZACIONDOL }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="F_VALORIZACION">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          F_VALORIZACION
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="F_VALORIZACION">
+          {{ row.F_VALORIZACION }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="ncuotas_generadas">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          ncuotas_generadas
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="ncuotas_generadas">
+          {{ row.ncuotas_generadas }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="cuotasatrasadas">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          cuotasatrasadas
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="cuotasatrasadas">
+          {{ row.cuotasatrasadas }}
+        </mat-cell>
+      </ng-container>
+
+      <!-- <ng-container matColumnDef="V_REALIZACIONDOL">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          V_REALIZACIONDOL
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="V_REALIZACIONDOL">
+          {{ row.V_REALIZACIONDOL }}
+        </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="F_VALORIZACION">
+        <mat-header-cell *matHeaderCellDef mat-sort-header>
+          F_VALORIZACION
+        </mat-header-cell>
+        <mat-cell *matCellDef="let row" data-label="F_VALORIZACION">
+          {{ row.F_VALORIZACION }}
+        </mat-cell>
+      </ng-container> -->
+
+<!-- <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
       <mat-row *matRowDef="let row; columns: displayedColumns"> </mat-row>
-    </mat-table>
-    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"> </mat-paginator>
-  </div>
+    </mat-table> -->
+<!-- <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]"> </mat-paginator> -->
+<!-- </div>
+</div> -->
+<div>
+  <br /><br />
+  <button (click)="exportToExcel()">Export to Excel</button>
+  <br /><br /><br /><br /><br /><br /><br /><br /><br />
 </div>
