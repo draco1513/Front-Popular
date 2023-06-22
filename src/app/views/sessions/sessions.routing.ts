@@ -7,10 +7,7 @@ import { SigninComponent } from "./signin/signin.component";
 import { SignupComponent } from "./signup/signup.component";
 import { NotFoundComponent } from "./not-found/not-found.component";
 import { ErrorComponent } from "./error/error.component";
-<<<<<<< HEAD
 
-=======
->>>>>>> prueba-casa
 
 export const SessionsRoutes: Routes = [
   {

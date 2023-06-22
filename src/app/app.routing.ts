@@ -14,7 +14,7 @@ export const rootRouterConfig: Routes = [
   }, {
     path: '',
     redirectTo: 'sessions/signin',
-  }
+  },
 
 
   // {

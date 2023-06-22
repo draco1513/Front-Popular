@@ -25,13 +25,7 @@ export class SignupComponent implements OnInit {
         email: ["", [Validators.required, Validators.email]],
         password: password,
         agreed: [false, Validators.required]
-        //         firstName: ["", Validators.required],
-        //         lastName: ["", Validators.required],
-        //         username: ["", Validators.required],
-        //         email: ["", [Validators.required, Validators.email]],
-        //         password: password,
-        //         agreed: [false, Validators.required]
-        // >>>>>>> prueba-casa
+
       }
     );
   }
