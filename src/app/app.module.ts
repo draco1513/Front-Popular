@@ -9,6 +9,7 @@ import {
   PerfectScrollbarConfigInterface
 } from './shared/components/perfect-scrollbar';
 
+import { FormsModule } from '@angular/forms';
 
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './shared/inmemory-db/inmemory-db.service';

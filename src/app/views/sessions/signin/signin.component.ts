@@ -17,7 +17,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AppLoaderService } from 'app/shared/services/app-loader/app-loader.service';
 import { JwtAuthService } from 'app/shared/services/auth/jwt-auth.service';
 import { Subject } from 'rxjs/internal/Subject';
-
+import { SigninService } from 'app/services/sessions/signin.service';
+import { privateDecrypt } from 'crypto';
 @Component({
   selector: 'app-signin',
   templateUrl: './signin.component.html',
@@ -37,12 +38,15 @@ export class SigninComponent implements OnInit, AfterViewInit, OnDestroy {
     private jwtAuth: JwtAuthService,
     private egretLoader: AppLoaderService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private signinService: SigninService
   ) {
     this._unsubscribeAll = new Subject();
   }
 
   ngOnInit() {
+
+
     const password = new UntypedFormControl('', Validators.required);
 
     this.signinForm = new UntypedFormGroup({
@@ -59,7 +63,7 @@ export class SigninComponent implements OnInit, AfterViewInit, OnDestroy {
     }
   }
   ngAfterViewInit() {
-    this.autoSignIn();
+    // this.autoSignIn();
   }
 
   ngOnDestroy() {
